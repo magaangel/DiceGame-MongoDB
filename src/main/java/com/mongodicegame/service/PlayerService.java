@@ -34,6 +34,7 @@ public class PlayerService implements IplayerService{
         }catch (Exception e){
             e.getStackTrace();
         }//con lo anterior se evitan repeticiones en email y nickName
+        player.setId(sequenceGeneratorService.generateSequence(Player.SEQUENCE_NAME));
         return playerRepository.save(player);
     }
 
